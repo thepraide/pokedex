@@ -17,6 +17,7 @@
 		F10DC6F926CDE1EC00F0C2EA /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10DC6F826CDE1EC00F0C2EA /* CameraController.swift */; };
 		F10DC6FF26CDF34200F0C2EA /* pokedex.wav in Resources */ = {isa = PBXBuildFile; fileRef = F10DC6FE26CDF34200F0C2EA /* pokedex.wav */; };
 		F10DC70126CDF4F500F0C2EA /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10DC70026CDF4F500F0C2EA /* ResultController.swift */; };
+		F10DC70726CEFD3B00F0C2EA /* PokemonClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F10DC70626CEFD3B00F0C2EA /* PokemonClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		F10DC6F826CDE1EC00F0C2EA /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		F10DC6FE26CDF34200F0C2EA /* pokedex.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pokedex.wav; sourceTree = "<group>"; };
 		F10DC70026CDF4F500F0C2EA /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
+		F10DC70626CEFD3B00F0C2EA /* PokemonClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = PokemonClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		F10DC6C726CDC3DC00F0C2EA /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				F10DC70626CEFD3B00F0C2EA /* PokemonClassifier.mlmodel */,
 				F10DC6FE26CDF34200F0C2EA /* pokedex.wav */,
 				F10DC6C826CDC3DC00F0C2EA /* AppDelegate.swift */,
 				F10DC6CA26CDC3DC00F0C2EA /* SceneDelegate.swift */,
@@ -269,6 +272,7 @@
 				F10DC6F926CDE1EC00F0C2EA /* CameraController.swift in Sources */,
 				F10DC70126CDF4F500F0C2EA /* ResultController.swift in Sources */,
 				F10DC6CB26CDC3DC00F0C2EA /* SceneDelegate.swift in Sources */,
+				F10DC70726CEFD3B00F0C2EA /* PokemonClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

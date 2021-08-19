@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import CoreML
 
 final class CameraController: UIViewController {
     
@@ -37,6 +38,15 @@ final class CameraController: UIViewController {
     
     @IBOutlet weak var cameraView: UIView!
     
+    private let model: PokemonClassifier = {
+        let config = MLModelConfiguration()
+        guard let model = try? PokemonClassifier(configuration: config) else {
+            fatalError("Can't create model")
+        }
+        return model
+    }()
+    
+    private var output: PokemonClassifierOutput?
     
     override func viewWillAppear(_ animated: Bool) {
         guard let cameraLayer = previewCameraLayer else {
@@ -61,6 +71,7 @@ final class CameraController: UIViewController {
     private func showPokemonClassification() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let resultController = storyboard.instantiateViewController(withIdentifier: "ResultController") as? ResultController else { return }
+        resultController.pokemonClass = self.output
         resultController.modalPresentationStyle = .pageSheet
         present(resultController, animated: true, completion: nil)
     }
@@ -70,6 +81,9 @@ extension CameraController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        
+        guard let result = try? model.prediction(image: pixelBuffer) else {
+            fatalError("Can't get a result")
+        }
+        self.output = result
     }
 }
