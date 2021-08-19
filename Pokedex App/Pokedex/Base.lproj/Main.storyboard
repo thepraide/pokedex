@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CameraController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokedex_background" translatesAutoresizingMaskIntoConstraints="NO" id="bKo-vE-u4D">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgX-b4-lx2">
+                                <rect key="frame" x="77" y="291.5" width="226" height="163"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NgX-b4-lx2" secondAttribute="height" multiplier="226:163" id="bCj-gI-uhM"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hli-Yj-t4l" userLabel="pokeButton">
+                                <rect key="frame" x="20" y="518" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="fbW-V2-kvZ"/>
+                                    <constraint firstAttribute="height" constant="60" id="rbl-1w-z3l"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pokeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tnX-Wh-QkT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.80794042349999995" green="0.14086559409999999" blue="0.22189825769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bKo-vE-u4D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5cw-Bp-Nez"/>
+                            <constraint firstItem="NgX-b4-lx2" firstAttribute="width" secondItem="bKo-vE-u4D" secondAttribute="width" multiplier="0.545894" id="66w-t9-C7b"/>
+                            <constraint firstItem="NgX-b4-lx2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-17" id="6BN-gP-NnQ"/>
+                            <constraint firstItem="NgX-b4-lx2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-75" id="Hmk-aS-xsk"/>
+                            <constraint firstItem="bKo-vE-u4D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KGM-eq-yT7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bKo-vE-u4D" secondAttribute="bottom" id="KXI-tT-H7N"/>
+                            <constraint firstItem="hli-Yj-t4l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="act-DH-5jk"/>
+                            <constraint firstItem="hli-Yj-t4l" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="dVI-wm-fYf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bKo-vE-u4D" secondAttribute="trailing" id="mqR-WN-9bi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="NgX-b4-lx2" id="P67-Hp-wYK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
+        </scene>
+        <!--Result Controller-->
+        <scene sceneID="z1r-Gg-NDe">
+            <objects>
+                <viewController storyboardIdentifier="ResultController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9gz-OZ-Ymz" customClass="ResultController" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GIe-vA-7Hh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemón:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikF-mA-yPm">
+                                <rect key="frame" x="40" y="114" width="334" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="l8k-Ye-bn5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" red="0.80794042349999995" green="0.14086559409999999" blue="0.22189825769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4df-Jx-1vN">
+                                <rect key="frame" x="10" y="204" width="394" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Ccz-u8-BGH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uWQ-T1-44f"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ikF-mA-yPm" firstAttribute="top" secondItem="uWQ-T1-44f" secondAttribute="top" constant="70" id="0PH-OI-0Fy"/>
+                            <constraint firstItem="ikF-mA-yPm" firstAttribute="leading" secondItem="uWQ-T1-44f" secondAttribute="leading" constant="40" id="6g1-3B-a0u"/>
+                            <constraint firstItem="4df-Jx-1vN" firstAttribute="top" secondItem="ikF-mA-yPm" secondAttribute="bottom" constant="50" id="Rlc-7U-waL"/>
+                            <constraint firstItem="uWQ-T1-44f" firstAttribute="trailing" secondItem="4df-Jx-1vN" secondAttribute="trailing" constant="10" id="bcB-44-iGX"/>
+                            <constraint firstItem="4df-Jx-1vN" firstAttribute="leading" secondItem="uWQ-T1-44f" secondAttribute="leading" constant="10" id="dy7-sn-OMl"/>
+                            <constraint firstItem="uWQ-T1-44f" firstAttribute="trailing" secondItem="ikF-mA-yPm" secondAttribute="trailing" constant="40" id="g1f-UD-aGA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="4df-Jx-1vN" id="YRb-OP-s9O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="umA-an-ATQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pokedex_background" width="512" height="911"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
